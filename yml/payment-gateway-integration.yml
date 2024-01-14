@@ -1,0 +1,27 @@
+# External Service Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-gateway-integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-gateway-integration
+  template:
+    metadata:
+      labels:
+        app: payment-gateway-integration
+    spec:
+      containers:
+      - name: payment-gateway-integration
+        image: external-service-image
+        resources:
+          requests:
+            memory: '500Mi'
+            cpu: '500m'
+          limits:
+            memory: '1Gi'
+            cpu: '1'
+        ports:
+        - containerPort: 8081

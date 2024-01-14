@@ -1,0 +1,12 @@
+# Backend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: invoice-api-service
+spec:
+  selector:
+    app: invoice-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

@@ -1,0 +1,12 @@
+# RabbitMQ Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-message-queue-service
+spec:
+  selector:
+    app: store-message-queue
+  ports:
+    - protocol: TCP
+      port: 5672
+      targetPort: 5672

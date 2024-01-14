@@ -1,0 +1,20 @@
+# Data Handler Job
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sales-data-processor
+spec:
+  template:
+    spec:
+      containers:
+      - name: sales-data-processor
+        image: data-handler-image
+        resources:
+          requests:
+            memory: '500Mi'
+            cpu: '500m'
+          limits:
+            memory: '1Gi'
+            cpu: '1'
+      restartPolicy: Never
+  backoffLimit: 4
