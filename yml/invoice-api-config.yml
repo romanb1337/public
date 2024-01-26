@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: invoice-api-config
-data:
-  INVOICE_API_SERVICE_URL: "invoice-api-service"
